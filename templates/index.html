@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <title>Index</title>
+    <meta charset="UTF-8">
+    <title>Items List</title>
 </head>
-
 <body>
-  <h1>Index</h1>
-  <p>Index page</p>
+    <h1>Items List</h1>
+    <ul>
+        {% for item in items %}
+            <li>{{ item.name }} - {{ item.description }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('main.add') }}">Add New Item</a>
 </body>
-
 </html>
